@@ -61,7 +61,6 @@ egress {
 resource "aws_instance" "terraform-instance" {
    for_each = tomap({
     terraform_micro_1 = "t2.micro",
-    terraform_micro_2 = "t2.micro"
    })
    depends_on = [ aws_key_pair.terraform_key, aws_security_group.secutiy_group ]
    key_name = aws_key_pair.terraform_key.key_name
